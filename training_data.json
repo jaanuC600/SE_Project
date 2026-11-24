@@ -1,0 +1,170 @@
+[
+  {
+    "agent": "requirements",
+    "instruction": "Given this loan and credit system context, generate functional and non-functional requirements for loan product setup and interest rate configuration.",
+    "input": "Administrators define loan products such as personal, home and vehicle loans with their interest rates, tenure limits and fees.",
+    "output": "FR-01 [Functional]: The system shall allow an administrator to create a loan product with minimum and maximum amount, tenure range, interest rate and processing fee.\nReasoning: Product rules drive every later calculation and must be defined in one place.\nFR-02 [Functional]: The system shall support both fixed and floating interest rates for a loan product.\nReasoning: Different loan types are priced differently and floating rates follow the benchmark rate.\nFR-03 [Functional]: The system shall apply a changed interest rate only to new applications unless the product rules specify otherwise.\nReasoning: Silent changes to existing loans would cause disputes and regulatory complaints.\nNFR-01 [Non-functional]: The system shall keep a versioned history of every product configuration change with user and timestamp.\nReasoning: Auditors need to know which rules applied to which loan at which time."
+  },
+  {
+    "agent": "requirements",
+    "instruction": "Given this loan and credit system context, generate functional and non-functional requirements for digital lending consent and data privacy.",
+    "input": "Digital lending apps must disclose loan terms clearly, collect explicit consent for data use and protect borrower data under regulatory guidelines.",
+    "output": "FR-01 [Functional]: The system shall display a key fact statement with APR, fees and total repayment amount before the borrower accepts a loan.\nReasoning: Clear disclosure is required by digital lending guidelines and prevents hidden-charge complaints.\nFR-02 [Functional]: The system shall collect explicit, purpose-specific consent before accessing contacts, location or other personal data.\nReasoning: Data minimisation and informed consent are core privacy obligations.\nFR-03 [Functional]: The system shall let a borrower withdraw consent and request deletion of data that is no longer required.\nReasoning: Borrowers must retain control over their personal data.\nNFR-01 [Non-functional]: The system shall store borrower data only on servers located in the permitted jurisdiction and protect it with AES-256 encryption.\nReasoning: Data localisation and strong encryption are expected under financial data protection rules."
+  },
+  {
+    "agent": "requirements",
+    "instruction": "Given this loan and credit system context, generate functional and non-functional requirements for regulatory reporting and audit trail.",
+    "input": "The lender must submit periodic reports to the regulator and prove how decisions were made.",
+    "output": "FR-01 [Functional]: The system shall generate periodic reports of portfolio size, overdue accounts and provisioning in the regulator's format.\nReasoning: Missing or late reports lead to penalties.\nFR-02 [Functional]: The system shall store the inputs and outputs of every credit decision for later retrieval.\nReasoning: Regulators may ask why a particular loan was approved or rejected.\nFR-03 [Functional]: The system shall allow auditors read-only access to decision records and reports.\nReasoning: Auditors must verify without being able to alter evidence.\nNFR-01 [Non-functional]: The system shall make audit records tamper-evident and retain them for the legally required period.\nReasoning: Evidence is useless if it can be changed unnoticed."
+  },
+  {
+    "agent": "sdlc",
+    "instruction": "Given these software requirements, identify the most appropriate SDLC model with a software engineering justification.",
+    "input": "Requirements for a new AI credit-scoring engine: uncertain model accuracy, unproven data sources, high financial and fairness risk, large budget, requirements will be refined as prototypes are evaluated.",
+    "output": "Recommended SDLC: Spiral\nCharacteristics identified:\n- Technical and business risk is high and poorly understood.\n- Requirements will be refined after prototypes are evaluated.\n- The project is large and expensive, so early risk reduction has high value.\nJustification: Spiral repeats planning, risk analysis, engineering and evaluation in each loop, so uncertain data sources and model fairness can be tested through prototypes before large investment. The explicit risk analysis step matches the main need of this project.\nWhy not Waterfall: It postpones testing until late, which is dangerous when feasibility itself is uncertain."
+  },
+  {
+    "agent": "sdlc",
+    "instruction": "Given these software requirements, identify the most appropriate SDLC model with a software engineering justification.",
+    "input": "Requirements for a customer-facing mobile loan app: UX likely to change after user feedback, competitors releasing features quickly, small team, product owner available daily, core compliance rules known.",
+    "output": "Recommended SDLC: Agile (Scrum)\nCharacteristics identified:\n- Requirements are expected to evolve with user feedback.\n- Fast time to market matters.\n- Stakeholders are available for frequent review.\nJustification: Scrum delivers working increments in short sprints, so feedback can reshape the backlog every few weeks. Daily product owner access gives the continuous collaboration Scrum relies on, and known compliance rules can be added to the definition of done.\nWhy not Waterfall: Locking all requirements upfront would delay feedback and make late UX changes expensive."
+  },
+  {
+    "agent": "sdlc",
+    "instruction": "Given these software requirements, identify the most appropriate SDLC model with a software engineering justification.",
+    "input": "Requirements for a complete core loan platform covering origination, KYC, scoring, disbursement, collections and reporting; large scope, modules depend on each other, regulator deadline for first release, later modules can follow.",
+    "output": "Recommended SDLC: Incremental\nCharacteristics identified:\n- The system is large and can be split into modules.\n- A core subset must go live first to meet the deadline.\n- Later modules can be refined from experience with earlier ones.\nJustification: Incremental development delivers the highest-priority modules such as origination and KYC first and adds collections and reporting in later increments, so the deadline is met and each increment is tested on top of a working base.\nWhy not Waterfall: Delivering the entire platform in one release delays any working software and concentrates integration risk at the end."
+  },
+  {
+    "agent": "requirements",
+    "instruction": "Given this loan and credit system context, generate functional and non-functional requirements for loan foreclosure and prepayment.",
+    "input": "Borrowers may pay part of the loan early or close it completely before the end of the tenure.",
+    "output": "FR-01 [Functional]: The system shall calculate the exact foreclosure amount including principal, accrued interest and applicable charges for a given date.\nReasoning: Borrowers need an accurate figure to close the loan.\nFR-02 [Functional]: The system shall allow partial prepayment and let the borrower choose to reduce either EMI or tenure.\nReasoning: Borrowers have different goals when paying early.\nFR-03 [Functional]: The system shall issue a no-objection certificate and release collateral after full closure.\nReasoning: Closure is not complete until the borrower's obligations and the lender's claims are cleared.\nNFR-01 [Non-functional]: The system shall show the same foreclosure amount in the app, branch system and statement for the same date.\nReasoning: Inconsistent figures cause disputes."
+  },
+  {
+    "agent": "requirements",
+    "instruction": "Given this loan and credit system context, generate functional and non-functional requirements for customer grievance redressal.",
+    "input": "Borrowers need a way to raise complaints about charges, collections or service and track their resolution.",
+    "output": "FR-01 [Functional]: The system shall let a customer register a complaint online and receive a unique ticket number.\nReasoning: A ticket number allows tracking and follow-up.\nFR-02 [Functional]: The system shall assign each complaint a category and a target resolution time.\nReasoning: Defined deadlines ensure timely handling.\nFR-03 [Functional]: The system shall escalate complaints automatically when the target time is exceeded.\nReasoning: Escalation prevents complaints from being forgotten.\nNFR-01 [Non-functional]: The system shall make complaint history visible to the customer for at least 2 years.\nReasoning: Transparency builds trust and supports regulatory expectations."
+  },
+  {
+    "agent": "sdlc",
+    "instruction": "Given these software requirements, identify the most appropriate SDLC model with a software engineering justification.",
+    "input": "Requirements for a loan pre-approval demo screen: stakeholders cannot describe the layout, they want to see something quickly, no integration with real systems yet, short deadline.",
+    "output": "Recommended SDLC: RAD\nCharacteristics identified:\n- User interface requirements are unclear.\n- Stakeholders want a working prototype quickly.\n- The component is small and loosely coupled.\nJustification: Rapid Application Development builds prototypes with heavy user involvement and reusable components, so stakeholders can react to a visible screen within days and the requirements become clear through iteration.\nWhy not V-Model: Its upfront specification and heavy verification planning are wasted when the requirements are still unknown and the screen is only a demo."
+  },
+  {
+    "agent": "requirements",
+    "instruction": "Given this loan and credit system context, generate functional and non-functional requirements for credit card limit management.",
+    "input": "A credit card issuer assigns, reviews and changes the credit limit of each cardholder.",
+    "output": "FR-01 [Functional]: The system shall assign an initial credit limit based on income, credit score and internal policy.\nReasoning: The limit controls the issuer's exposure to each customer.\nFR-02 [Functional]: The system shall allow a cardholder to request a limit increase and shall evaluate it using current repayment behaviour.\nReasoning: Responsible increases are based on updated data.\nFR-03 [Functional]: The system shall block transactions that exceed the available limit and notify the cardholder.\nReasoning: Limits are meaningless unless they are enforced in real time.\nNFR-01 [Non-functional]: The system shall check the available limit during authorisation in under 300 milliseconds.\nReasoning: Card payments must complete quickly at the point of sale."
+  },
+  {
+    "agent": "requirements",
+    "instruction": "Given this loan and credit system context, generate functional and non-functional requirements for loan disbursement.",
+    "input": "After approval, the sanctioned amount is transferred to the borrower's account in one or more tranches.",
+    "output": "FR-01 [Functional]: The system shall disburse funds only after all mandatory documents and the signed loan agreement are recorded.\nReasoning: Disbursing early exposes the lender to legal and credit risk.\nFR-02 [Functional]: The system shall support disbursement in tranches linked to defined milestones.\nReasoning: Construction and similar loans are released in stages.\nFR-03 [Functional]: The system shall verify the beneficiary account number and name before transfer.\nReasoning: Wrong credits are hard to recover and damage customer trust.\nNFR-01 [Non-functional]: The system shall make each disbursement transaction idempotent so a retry never pays twice.\nReasoning: Network failures and retries are common in payment flows."
+  },
+  {
+    "agent": "sdlc",
+    "instruction": "Given these software requirements, identify the most appropriate SDLC model with a software engineering justification.",
+    "input": "Requirements for an internal monthly loan portfolio report: small scope, fixed report layouts defined by the regulator, one data source, no expected change, single developer team.",
+    "output": "Recommended SDLC: Waterfall\nCharacteristics identified:\n- Scope is small and fully known upfront.\n- Requirements are fixed by the regulator's format.\n- Little technical or business risk.\nJustification: Waterfall's sequential phases with a signed-off specification work well when nothing is expected to change, and its light process overhead suits a small, well-understood deliverable.\nWhy not Agile: Sprint planning and continuous re-prioritisation add overhead without benefit when the requirements will not change."
+  },
+  {
+    "agent": "requirements",
+    "instruction": "Given this loan and credit system context, generate functional and non-functional requirements for overdue collections and recovery.",
+    "input": "The bank must track delinquent accounts, contact borrowers and escalate unpaid loans.",
+    "output": "FR-01 [Functional]: The system shall classify overdue accounts into buckets such as 1-30, 31-60 and 61-90 days past due.\nReasoning: Collection strategy and provisioning depend on the age of the delinquency.\nFR-02 [Functional]: The system shall assign overdue accounts to collection agents and record each contact attempt and outcome.\nReasoning: Tracking contact history avoids duplicate calls and supports audits.\nFR-03 [Functional]: The system shall restrict collection calls and messages to permitted hours and approved templates.\nReasoning: Recovery practices are regulated to prevent harassment.\nNFR-01 [Non-functional]: The system shall refresh overdue buckets daily before business hours.\nReasoning: Agents need current data to work on the right accounts."
+  },
+  {
+    "agent": "requirements",
+    "instruction": "Given this loan and credit system context, generate functional and non-functional requirements for role-based access control for bank staff.",
+    "input": "Different bank staff such as loan officers, underwriters and auditors must see and do only what their role allows.",
+    "output": "FR-01 [Functional]: The system shall assign each staff user one or more roles with defined permissions.\nReasoning: Role-based control is the standard way to enforce least privilege.\nFR-02 [Functional]: The system shall prevent a user from approving an application that they created or edited.\nReasoning: Segregation of duties reduces internal fraud.\nFR-03 [Functional]: The system shall require multi-factor authentication for staff accounts with approval authority.\nReasoning: Compromised credentials of approvers carry high risk.\nNFR-01 [Non-functional]: The system shall log all permission changes and review access rights quarterly through a generated report.\nReasoning: Access reviews are a common audit requirement."
+  },
+  {
+    "agent": "requirements",
+    "instruction": "Given this loan and credit system context, generate functional and non-functional requirements for online loan application submission.",
+    "input": "Customers apply for personal loans through a web portal by entering income, employment and loan amount details and uploading supporting documents.",
+    "output": "FR-01 [Functional]: The system shall allow a registered customer to submit a loan application specifying amount, tenure and purpose.\nReasoning: This is the entry point of the loan lifecycle and every later step depends on a complete application record.\nFR-02 [Functional]: The system shall allow upload of income and identity documents in PDF or image format up to 5 MB each.\nReasoning: Underwriters need evidence to verify declared income, and size limits protect storage and performance.\nFR-03 [Functional]: The system shall save an incomplete application as a draft and let the customer resume it later.\nReasoning: Long forms cause drop-off, so drafts improve completion rates.\nNFR-01 [Non-functional]: The system shall encrypt uploaded documents at rest and in transit.\nReasoning: Income and identity documents are sensitive personal data covered by data protection regulation."
+  },
+  {
+    "agent": "sdlc",
+    "instruction": "Given these software requirements, identify the most appropriate SDLC model with a software engineering justification.",
+    "input": "Requirements for a KYC verification module: fixed regulatory rules, identity checks mandated by law, full audit logging, zero tolerance for defects, scope unlikely to change.",
+    "output": "Recommended SDLC: V-Model\nCharacteristics identified:\n- Requirements are stable because they come from fixed regulation.\n- Defects have legal and financial consequences.\n- Every requirement must be traceable to a test for audit.\nJustification: The V-Model pairs each development phase with a matching test phase, so every regulatory requirement gets a verification step and a traceability record. Stable scope removes the main weakness of sequential models.\nWhy not Agile: Frequent changes and light documentation do not suit a module that auditors will inspect against fixed rules."
+  },
+  {
+    "agent": "requirements",
+    "instruction": "Given this loan and credit system context, generate functional and non-functional requirements for fraud detection on loan applications.",
+    "input": "The lender wants to detect fake or manipulated applications before money is disbursed.",
+    "output": "FR-01 [Functional]: The system shall flag applications that reuse the same phone number, address or bank account across different applicants.\nReasoning: Shared identifiers are a common sign of organised fraud.\nFR-02 [Functional]: The system shall compare declared income with the income shown in uploaded documents and flag large differences.\nReasoning: Inflated income is the most frequent application misstatement.\nFR-03 [Functional]: The system shall place flagged applications in a manual review queue and block disbursement until cleared.\nReasoning: Automated flags need human judgement to avoid wrongly rejecting genuine customers.\nNFR-01 [Non-functional]: The system shall keep the false-positive rate of fraud rules measurable through a monthly report.\nReasoning: Rules that block too many genuine customers harm the business."
+  },
+  {
+    "agent": "requirements",
+    "instruction": "Given this loan and credit system context, generate functional and non-functional requirements for loan application tracking dashboard.",
+    "input": "Customers and staff want to see where an application is in the approval process.",
+    "output": "FR-01 [Functional]: The system shall show customers the current stage of their application such as submitted, verification, underwriting, approved or disbursed.\nReasoning: Visibility reduces enquiry calls.\nFR-02 [Functional]: The system shall show staff the queue of applications pending their action sorted by age.\nReasoning: Sorting by age prevents long waits.\nFR-03 [Functional]: The system shall display pending documents or actions required from the customer.\nReasoning: Customers often delay applications because they do not know what is missing.\nNFR-01 [Non-functional]: The system shall show status changes within 30 seconds of the underlying event.\nReasoning: Stale status information causes confusion."
+  },
+  {
+    "agent": "requirements",
+    "instruction": "Given this loan and credit system context, generate functional and non-functional requirements for credit bureau reporting.",
+    "input": "Lenders must regularly report borrower repayment data to credit bureaus.",
+    "output": "FR-01 [Functional]: The system shall generate a monthly file of borrower account status in the format required by the credit bureau.\nReasoning: Timely reporting is a regulatory obligation.\nFR-02 [Functional]: The system shall include only accounts whose borrowers have given reporting consent in the loan agreement.\nReasoning: Reporting without legal basis violates privacy rules.\nFR-03 [Functional]: The system shall let staff correct a reporting error and resubmit the corrected record.\nReasoning: Wrong data harms borrowers' credit scores and must be fixable.\nNFR-01 [Non-functional]: The system shall log every submission and bureau response for at least 5 years.\nReasoning: Evidence of reporting is needed in disputes and inspections."
+  },
+  {
+    "agent": "requirements",
+    "instruction": "Given this loan and credit system context, generate functional and non-functional requirements for co-applicant and guarantor management.",
+    "input": "Some loans need a co-applicant or guarantor whose income and identity must also be verified.",
+    "output": "FR-01 [Functional]: The system shall allow one or more co-applicants or guarantors to be linked to a loan application.\nReasoning: Their income can improve eligibility and their liability must be recorded.\nFR-02 [Functional]: The system shall run KYC and credit checks for each linked co-applicant or guarantor.\nReasoning: Risk assessment is incomplete without checking everyone who is liable.\nFR-03 [Functional]: The system shall record each guarantor's consent before the application is submitted for approval.\nReasoning: A guarantee without documented consent is not enforceable.\nNFR-01 [Non-functional]: The system shall restrict access to co-applicant personal data to authorised staff and the linked applicants.\nReasoning: Third-party personal data is protected by privacy rules."
+  },
+  {
+    "agent": "requirements",
+    "instruction": "Given this loan and credit system context, generate functional and non-functional requirements for the loan approval workflow.",
+    "input": "Applications pass through verification, underwriting and final approval by authorised bank staff with different levels of authority.",
+    "output": "FR-01 [Functional]: The system shall route each application to an underwriter and escalate loans above a configured amount to a senior approver.\nReasoning: Higher exposure needs higher authority, which is a standard internal control in lending.\nFR-02 [Functional]: The system shall let an approver approve, reject or return an application with a mandatory comment.\nReasoning: Comments create a decision trail and give the customer a clear reason.\nFR-03 [Functional]: The system shall notify the customer by SMS and email whenever the application status changes.\nReasoning: Timely updates reduce support calls and keep the customer informed.\nNFR-01 [Non-functional]: The system shall keep an immutable audit log of every approval action with user ID and timestamp.\nReasoning: Regulators and internal auditors require traceability of all credit decisions."
+  },
+  {
+    "agent": "requirements",
+    "instruction": "Given this loan and credit system context, generate functional and non-functional requirements for loan restructuring.",
+    "input": "Borrowers facing financial difficulty may request a change in tenure or instalment amount.",
+    "output": "FR-01 [Functional]: The system shall allow a borrower to submit a restructuring request with a reason and supporting documents.\nReasoning: A formal request creates a record for evaluation.\nFR-02 [Functional]: The system shall recalculate the repayment schedule for a proposed new tenure or rate and show the cost difference.\nReasoning: Both parties must see the financial impact before agreeing.\nFR-03 [Functional]: The system shall require approval from an authorised credit officer before a restructured schedule becomes active.\nReasoning: Restructuring changes credit risk and needs control.\nNFR-01 [Non-functional]: The system shall preserve the original schedule and link it to the restructured one.\nReasoning: Reporting and audits must show how the loan changed."
+  },
+  {
+    "agent": "requirements",
+    "instruction": "Given this loan and credit system context, generate functional and non-functional requirements for loan eligibility check and credit scoring.",
+    "input": "The lender evaluates an applicant's credit bureau score, income and existing obligations to decide eligibility and a maximum loan amount.",
+    "output": "FR-01 [Functional]: The system shall retrieve the applicant's credit score from an approved credit bureau with the applicant's consent.\nReasoning: Credit history is the primary predictor of repayment behaviour and consent is legally required.\nFR-02 [Functional]: The system shall compute a debt-to-income ratio from declared income and existing monthly obligations.\nReasoning: The ratio shows repayment capacity and supports a defensible approval decision.\nFR-03 [Functional]: The system shall display an eligibility result with the maximum sanctioned amount and the reasons for rejection when applicable.\nReasoning: Transparent decisions reduce disputes and support fair-lending expectations.\nNFR-01 [Non-functional]: The scoring rules shall be configurable by authorised risk officers without code changes or redeployment.\nReasoning: Credit policy changes frequently and risk teams cannot wait for software releases."
+  },
+  {
+    "agent": "requirements",
+    "instruction": "Given this loan and credit system context, generate functional and non-functional requirements for customer KYC verification.",
+    "input": "Before a loan is sanctioned, the bank must verify the identity and address of the applicant using government-approved documents.",
+    "output": "FR-01 [Functional]: The system shall collect and validate PAN and Aadhaar-based identity details before an application moves to underwriting.\nReasoning: KYC is mandatory for regulated lenders and an unverified identity creates fraud and compliance risk.\nFR-02 [Functional]: The system shall flag applications whose identity details do not match across submitted documents.\nReasoning: Mismatches are a common indicator of identity fraud and need manual review.\nFR-03 [Functional]: The system shall record the KYC status and verification timestamp for every applicant.\nReasoning: Auditors must be able to prove when and how each customer was verified.\nNFR-01 [Non-functional]: The system shall return an automated KYC verification result within 10 seconds for 95 percent of requests.\nReasoning: Slow verification delays disbursal and increases application abandonment."
+  },
+  {
+    "agent": "requirements",
+    "instruction": "Given this loan and credit system context, generate functional and non-functional requirements for loan statements and certificates.",
+    "input": "Borrowers request account statements and interest certificates for personal records and tax filing.",
+    "output": "FR-01 [Functional]: The system shall generate a loan account statement for any date range showing instalments, interest, charges and balance.\nReasoning: Borrowers need a clear record of what they have paid and owe.\nFR-02 [Functional]: The system shall generate an annual interest certificate for tax purposes.\nReasoning: Many borrowers claim tax benefits on interest paid.\nFR-03 [Functional]: The system shall deliver statements as password-protected PDF files by email or in the app.\nReasoning: Statements contain sensitive financial data.\nNFR-01 [Non-functional]: The system shall generate a statement within 10 seconds for up to 5 years of history.\nReasoning: Slow document generation frustrates customers."
+  },
+  {
+    "agent": "requirements",
+    "instruction": "Given this loan and credit system context, generate functional and non-functional requirements for collateral valuation for secured loans.",
+    "input": "Secured loans such as home or vehicle loans require the lender to record and value the asset offered as security.",
+    "output": "FR-01 [Functional]: The system shall capture collateral details including type, description, ownership and declared value.\nReasoning: Collateral is the lender's fallback if the borrower defaults.\nFR-02 [Functional]: The system shall allow an authorised valuer to record an assessed value and valuation date.\nReasoning: Independent valuation protects the lender from overstated asset values.\nFR-03 [Functional]: The system shall compute the loan-to-value ratio and block sanction if it exceeds the product limit.\nReasoning: LTV limits control the lender's exposure.\nNFR-01 [Non-functional]: The system shall retain collateral documents for the full loan period and at least 8 years after closure.\nReasoning: Legal disputes can arise long after the loan ends."
+  },
+  {
+    "agent": "requirements",
+    "instruction": "Given this loan and credit system context, generate functional and non-functional requirements for EMI repayment and reminders.",
+    "input": "Borrowers repay sanctioned loans through monthly instalments and the system tracks payments, dues and overdue accounts.",
+    "output": "FR-01 [Functional]: The system shall generate an amortisation schedule showing EMI, principal and interest for every sanctioned loan.\nReasoning: Borrowers and staff need a clear view of what is owed and when.\nFR-02 [Functional]: The system shall send a reminder three days before each EMI due date.\nReasoning: Early reminders reduce missed payments and overdue interest.\nFR-03 [Functional]: The system shall mark an account overdue and calculate penal charges when an EMI is unpaid after the due date.\nReasoning: Accurate overdue tracking is needed for collections and for correct financial reporting.\nNFR-01 [Non-functional]: The system shall post a received payment to the loan account within 1 minute and without duplicate entries.\nReasoning: Delayed or duplicated postings cause wrong balances and customer disputes."
+  },
+  {
+    "agent": "requirements",
+    "instruction": "Given this loan and credit system context, generate functional and non-functional requirements for EMI calculator.",
+    "input": "Customers want to estimate monthly instalments before applying by entering amount, tenure and interest rate.",
+    "output": "FR-01 [Functional]: The system shall compute the EMI from loan amount, annual interest rate and tenure in months using the reducing-balance method.\nReasoning: This is the standard method for retail loans and customers expect matching numbers at sanction.\nFR-02 [Functional]: The system shall display total interest payable and total repayment amount next to the EMI.\nReasoning: Customers compare loans by total cost, not only by instalment size.\nFR-03 [Functional]: The system shall validate that amount and tenure fall within the limits of the selected loan product.\nReasoning: Invalid inputs would produce misleading estimates.\nNFR-01 [Non-functional]: The system shall return the calculation result within 2 seconds.\nReasoning: The calculator is an interactive tool and delays reduce usage."
+  }
+]

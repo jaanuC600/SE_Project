@@ -1,0 +1,8 @@
+Recommended SDLC: V-Model
+Characteristics identified:
+- Requirements are stable because they come from fixed regulation.
+- Defects have legal and financial consequences.
+- Every requirement must be traceable to a test for audit.
+Justification: The V-Model pairs each development phase with a matching test phase, so every regulatory requirement gets a verification step and a traceability record.
+Why not Agile: Frequent change and light documentation do not suit a module that auditors will inspect against fixed rules.
+Why not Waterfall: Rapidly changing regulatory requirements and the need for fast credit scoring and risk rating updates make Waterfall unsuitable.

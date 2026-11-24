@@ -1,0 +1,25 @@
+Here are the functional and non-functional requirements for Loan Eligibility Check and Credit Scoring:
+
+**Loan Eligibility Check**
+
+1. **Functional Requirement**: The system shall check the loan eligibility of a borrower based on the credit score, income, employment status, and other relevant factors.
+	* Reasoning: The system shall ensure that only eligible borrowers are approved for loans.
+2. **Non-Functional Requirement**: The system shall respond to a loan eligibility check request within 2 seconds.
+	* Reasoning: The system shall ensure that the loan eligibility check is fast and efficient.
+3. **Functional Requirement**: The system shall generate a report of loan eligibility for each borrower.
+	* Reasoning: The system shall provide a clear and concise report of loan eligibility for each borrower.
+4. **Non-Functional Requirement**: The system shall generate a report of loan eligibility for each borrower within 1 minute.
+	* Reasoning: The system shall ensure that the report is generated quickly and efficiently.
+
+**Credit Scoring**
+
+1. **Functional Requirement**: The system shall calculate the credit score of a borrower based on their credit history, payment history, and other relevant factors.
+	* Reasoning: The system shall ensure that the credit score is calculated accurately and consistently.
+2. **Non-Functional Requirement**: The system shall calculate the credit score of a borrower within 30 seconds.
+	* Reasoning: The system shall ensure that the credit score is calculated quickly and efficiently.
+3. **Functional Requirement**: The system shall provide a report of the credit score for each borrower.
+	* Reasoning: The system shall ensure that the credit score is reported clearly and concisely.
+4. **Non-Functional Requirement**: The system shall provide a report of the credit score for each borrower within 1 minute.
+	* Reasoning: The system shall ensure that the report is generated quickly and efficiently.
+
+Note: These requirements are just examples and may need to be modified or expanded based on the specific requirements of the loan and credit system.

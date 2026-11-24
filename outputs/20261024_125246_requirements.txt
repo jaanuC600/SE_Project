@@ -1,0 +1,59 @@
+Here are the functional and non-functional requirements for Loan Eligibility Check:
+
+### Functional Requirements
+
+#### FR-001: Check Eligibility
+The system shall check a member's eligibility for a loan based on their credit score, income, employment history, and other relevant factors.
+
+Reasoning: This requirement ensures that the system can accurately assess a member's creditworthiness before approving a loan.
+
+#### FR-002: Return Eligibility Result
+The system shall return a boolean value indicating whether the member is eligible for the loan or not, along with a reason for the decision if applicable.
+
+Reasoning: This requirement ensures that the system provides clear and actionable feedback to the loan officer.
+
+#### FR-003: Update Member Data
+The system shall update the member's data in the system upon a successful loan approval or rejection.
+
+Reasoning: This requirement ensures that the system maintains accurate and up-to-date member data.
+
+### Non-Functional Requirements
+
+#### NFR-001: Performance
+The system shall process loan eligibility checks within 500ms for 95% of all requests.
+
+Reasoning: This requirement ensures that the system can handle a high volume of requests without compromising performance.
+
+#### NFR-002: Security
+The system shall encrypt sensitive member data, including credit scores and income information, both in transit and at rest.
+
+Reasoning: This requirement ensures that sensitive member data is protected from unauthorized access.
+
+#### NFR-003: Usability
+The system shall provide clear and concise error messages and feedback to the loan officer when a member is rejected for a loan.
+
+Reasoning: This requirement ensures that the system provides a good user experience for the loan officer.
+
+Here are the functional and non-functional requirements for Credit Scoring:
+
+**Functional Requirements**
+
+1. **Credit Score Calculation**: The system shall calculate the credit score for each borrower based on their credit history and other relevant factors.
+	* Reasoning: The system must be able to calculate a credit score to determine the borrower's creditworthiness.
+2. **Score Range Definition**: The system shall define a score range that determines the borrower's credit status (e.g., good, bad, etc.).
+	* Reasoning: The system must define a score range to categorize borrowers into different credit statuses.
+3. **Score Update Frequency**: The system shall update the credit score for each borrower at regular intervals (e.g., monthly, quarterly).
+	* Reasoning: The system must update the credit score regularly to reflect changes in the borrower's credit history.
+4. **Score Validation**: The system shall validate the credit score against a set of predefined rules to ensure accuracy.
+	* Reasoning: The system must validate the credit score to ensure it is accurate and reliable.
+
+**Non-Functional Requirements**
+
+1. **Performance**: The system shall process credit score calculations within a reasonable time frame (e.g., < 1 minute).
+	* Reasoning: The system must be able to process credit score calculations quickly to meet user expectations.
+2. **Security**: The system shall protect sensitive borrower data (e.g., credit history, scores) with encryption and access controls.
+	* Reasoning: The system must protect sensitive data to prevent unauthorized access and breaches.
+3. **Scalability**: The system shall be able to handle a large volume of credit score calculations without performance degradation.
+	* Reasoning: The system must be able to handle a large volume of credit score calculations to support a large user base.
+4. **Compliance**: The system shall comply with relevant regulatory requirements (e.g., GDPR, CCPA) for credit scoring and data protection.
+	* Reasoning: The system must comply with regulatory requirements to ensure data protection and accuracy.

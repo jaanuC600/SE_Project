@@ -1,0 +1,43 @@
+Here are the functional and non-functional requirements for Loan Eligibility Check:
+
+### Functional Requirements
+
+1. **Check Eligibility**: The system shall check if a member is eligible for a loan based on their credit score, income, and employment history.
+	* Reasoning: A loan eligibility check is a critical process to ensure that members are not granted loans that they cannot afford to repay.
+2. **Return Eligibility Status**: The system shall return a boolean indicating whether the member is eligible for the loan or not.
+	* Reasoning: The system needs to provide a clear indication of the eligibility status to the loan administrator.
+3. **Support Multiple Credit Scoring Models**: The system shall support multiple credit scoring models, including the cooperative's own model and external credit agencies.
+	* Reasoning: The system needs to be flexible to accommodate different credit scoring models used by the cooperative and external credit agencies.
+4. **Consider Income and Employment History**: The system shall consider a member's income and employment history when evaluating their eligibility for a loan.
+	* Reasoning: A member's income and employment history are important factors in determining their creditworthiness.
+
+### Non-Functional Requirements
+
+1. **Performance**: The system shall perform loan eligibility checks within 500ms.
+	* Reasoning: A fast response time is essential to ensure that loan administrators can quickly process loan applications.
+2. **Security**: The system shall protect sensitive member data, including credit scores and employment history, from unauthorized access.
+	* Reasoning: Member data is sensitive and requires robust security measures to prevent data breaches.
+3. **Scalability**: The system shall be able to handle a minimum of 100 concurrent loan eligibility checks without a significant decrease in performance.
+	* Reasoning: The system needs to be able to scale to handle a large volume of loan applications.
+4. **Auditing**: The system shall maintain a record of all loan eligibility checks, including the outcome and any comments or notes.
+	* Reasoning: Auditing is essential to ensure that loan administrators can track the history of loan applications and make informed decisions.
+
+Here are the requirements for Credit Scoring:
+
+**Functional Requirements**
+
+1. **Calculate Credit Score**: The system must calculate a credit score for each loan application based on the applicant's credit history and other relevant factors.
+	* Reasoning: A credit score is a numerical value that represents an individual's creditworthiness.
+2. **Use a Valid Credit Scoring Model**: The system must use a valid and widely accepted credit scoring model, such as FICO or VantageScore.
+	* Reasoning: A valid credit scoring model ensures that credit scores are calculated consistently and accurately.
+3. **Consider Multiple Credit Factors**: The system must consider multiple credit factors, such as payment history, credit utilization, and credit age, when calculating the credit score.
+	* Reasoning: A comprehensive credit scoring model takes into account various factors to provide a more accurate assessment of creditworthiness.
+
+**Non-Functional Requirements**
+
+1. **Accuracy**: The credit scoring model must produce accurate credit scores that reflect the applicant's true creditworthiness.
+	* Reasoning: Accurate credit scores are essential for making informed lending decisions and ensuring compliance with regulatory requirements.
+2. **Scalability**: The system must be able to handle a large volume of loan applications and credit scores without compromising performance.
+	* Reasoning: A scalable system ensures that the credit scoring model can handle increasing volumes of data and applications.
+3. **Security**: The system must protect sensitive credit information and ensure that credit scores are not accessible to unauthorized users.
+	* Reasoning: Credit information is sensitive and protected by law, and the system must ensure that it is handled securely.

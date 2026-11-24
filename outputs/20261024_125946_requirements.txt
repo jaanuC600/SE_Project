@@ -1,0 +1,31 @@
+FR-01 [Functional]: The system shall allow a registered customer to submit a loan application specifying amount, tenure and purpose.
+Reasoning: This is the entry point of the loan lifecycle and every later step depends on a complete application record.
+
+FR-02 [Functional]: The system shall validate the loan application against the customer's credit history and report any discrepancies.
+Reasoning: Underwriters need to assess the customer's creditworthiness before approving the loan.
+
+FR-03 [Functional]: The system shall generate a unique loan reference number for each approved loan application.
+Reasoning: The reference number is used for tracking and record-keeping purposes.
+
+NFR-01 [Non-functional]: The system shall ensure that the credit report data is updated within 24 hours of a change in the customer's credit history.
+Reasoning: The system must reflect changes in the customer's credit history to ensure accurate credit scoring and reporting.
+
+NFR-02 [Non-functional]: The system shall store credit report data in compliance with the RBI's guidelines on credit reporting and data protection regulations.
+Reasoning: The system must adhere to RBI guidelines to ensure the secure and confidential handling of sensitive customer data.
+
+Here are the requirements for Credit Scoring:
+
+FR-01 [Functional]: The system shall calculate a credit score based on the credit history of the borrower.
+Reasoning: A credit score is a crucial input for loan approval and interest rate determination.
+
+FR-02 [Functional]: The system shall consider the credit score in the loan approval decision.
+Reasoning: A high credit score indicates a lower risk of default, and a low credit score indicates a higher risk.
+
+FR-03 [Functional]: The system shall provide a clear explanation of the credit scoring model used.
+Reasoning: Transparency is essential for regulatory compliance and building trust with customers.
+
+NFR-01 [Non-functional]: The system shall ensure that the credit scoring model is fair, unbiased, and compliant with RBI guidelines.
+Reasoning: The credit scoring model must not discriminate against any segment of the population, and must be transparent and auditable.
+
+NFR-02 [Non-functional]: The system shall store credit score data securely and in compliance with data protection regulations.
+Reasoning: Credit score data is sensitive personal information that must be protected from unauthorized access.

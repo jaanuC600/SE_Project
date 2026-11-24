@@ -1,0 +1,7 @@
+Recommended SDLC: Waterfall
+Characteristics identified:
+- Requirements are stable because they are functional and non-functional requirements that are well-defined and not expected to change.
+- The system must be auditable and compliant with RBI guidelines.
+- The system must ensure that the credit report data is updated within 24 hours of a change in the customer's credit history.
+- The system must store credit report data securely and in compliance with data protection regulations.
+Justification: Waterfall delivers a complete and stable product upfront, which is necessary for regulatory compliance and audit requirements. The requirements are well-defined and not expected to change, so the development phase can focus on delivering a stable product.
